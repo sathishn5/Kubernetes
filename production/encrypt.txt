@@ -15,4 +15,4 @@ Travis environment variable create with docker shell in local
 # travis encrypt AWS_ACCESS_KEY_ID="AKIAR5Q5TSU6LBA34ZGW" -r FourTimes/test --add
 # travis encrypt AWS_SECRET_ACCESS_KEY="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" -r FourTimes/test --add
 # travis encrypt docker_username="jjino" -r FourTimes/test –add
-# travis encrypt docker_password="Akila@19" -r FourTimes/test –add
+# travis encrypt docker_password="A19" -r FourTimes/test –add
