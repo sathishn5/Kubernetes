@@ -5,3 +5,14 @@ travis login
 
 travis encrypt-file service-account.json -r jinoj/demo 
 
+Travis environment variable create with docker shell in local
+
+
+# docker run -it -v $(pwd):/app ruby:2.3 sh
+# gem install travis
+# travis login
+# cd app
+# travis encrypt AWS_ACCESS_KEY_ID="AKIAR5Q5TSU6LBA34ZGW" -r FourTimes/test --add
+# travis encrypt AWS_SECRET_ACCESS_KEY="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" -r FourTimes/test --add
+# travis encrypt docker_username="jjino" -r FourTimes/test –add
+# travis encrypt docker_password="Akila@19" -r FourTimes/test –add
