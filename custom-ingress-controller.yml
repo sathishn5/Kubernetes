@@ -179,7 +179,7 @@ spec:
          #containerPort: 9113
         securityContext:
           allowPrivilegeEscalation: true
-          runAsUser: 101 #nginx
+#          runAsUser: 101 #nginx
           capabilities:
             drop:
             - ALL
@@ -197,7 +197,6 @@ spec:
         args:
           - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
           - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
-          - -external-service=default-http-backend
          #- -v=3 # Enables extensive logging. Useful for troubleshooting.
          #- -report-ingress-status
          #- -external-service=nginx-ingress
