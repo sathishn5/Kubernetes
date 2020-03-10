@@ -192,7 +192,6 @@ kind: Service
 metadata:
   labels:
     app: nginx-ingress
-    component: "controller"
   name: nginx-ingress-controller
 spec:
   ports:
@@ -206,7 +205,6 @@ spec:
       targetPort: https
   selector:
     app: nginx-ingress
-    component: "controller"
   type: "LoadBalancer"
 ---
 # default-backend-service.yaml
@@ -226,7 +224,6 @@ spec:
   selector:
     app: nginx-ingress
     component: "default-backend"
-    release: radiant
   type: "ClusterIP"
 ---
 # controller-deployment.yaml
@@ -235,7 +232,6 @@ kind: Deployment
 metadata:
   labels:
     app: nginx-ingress
-    component: "controller"
   name: nginx-ingress-controller
 spec:
   selector:
@@ -248,7 +244,6 @@ spec:
     metadata:
       labels:
         app: nginx-ingress
-        component: "controller"
     spec:
       dnsPolicy: ClusterFirst
       containers:
@@ -329,7 +324,6 @@ spec:
       labels:
         app: nginx-ingress
         component: "default-backend"
-        release: radiant
     spec:
       containers:
         - name: nginx-ingress-default-backend
