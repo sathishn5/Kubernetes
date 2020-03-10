@@ -241,7 +241,6 @@ spec:
   selector:
     matchLabels:
       app: nginx-ingress
-      release: radiant
   replicas: 1
   revisionHistoryLimit: 10
   minReadySeconds: 0
