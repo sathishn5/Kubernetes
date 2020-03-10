@@ -195,6 +195,7 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         args:
+          - /nginx-ingress-controller
           - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
           - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
           - -default-backend-service=$(POD_NAMESPACE)/default-http-backend
