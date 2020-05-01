@@ -5,3 +5,18 @@ do
     echo $i
     kubectl exec  $i -- bash -c 'find /user-home/1001/DSX_Projects/S3/rstudio/ -type f -name 'core.[0-9]*' -exec rm -rf {} \;'
 done
+
+
+
+#!/usr/bin/env bash
+
+for i in `kubectl get po -n dx | grep -i dx-core | grep -i running | awk '{print $1}' |head -n1  `
+do
+    echo $i
+     for fileIn in {1000..1054..1}
+
+        do 
+            echo $fileIn
+            kubectl exec -n dsx  $i -- bash -c 'find /user-home/$fileIn/_Projects/3/dio/ -type f -name 'core.[0-9]*' -exec rm -rf {} \;'
+        done
+done
