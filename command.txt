@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for i in `kubectl get po -n dsx | grep -i dsx-core | grep -i running | awk '{print $1}' |head -n1  `
+do
+    echo $i
+    kubectl exec  $i -- bash -c 'find /user-home/1001/DSX_Projects/S3/rstudio/ -type f -name 'core.[0-9]*' -exec rm -rf {} \;'
+done
