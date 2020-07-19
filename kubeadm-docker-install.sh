@@ -40,3 +40,7 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+
+# https://blog.jreypo.io/containers/microsoft/azure/cloud/cloud-native/devops/deploying-a-kubernetes-cluster-in-azure-using-kubeadm/
+# https://www.scaleway.com/en/docs/deploy-kubernetes-cluster-kubeadm-cloud-controller-manager/
+# https://cloudyuga.guru/blog/cloud-controller-manager
