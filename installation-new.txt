@@ -62,11 +62,15 @@ run this below command in only node1.coz we are going to make node1 as kube mast
 # mkdir -p $HOME/.kube
 # sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 # sudo chown $(id -u):$(id -g) $HOME/.kube/config
-# export kubever=$(kubectl version | base64 | tr -d '\n')
 
 https://www.weave.works/docs/net/latest/kubernetes/kube-addon/ (kube proxy addons installation)
 
 
+# kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+
+# old version if new version not working please use this instead of
+# export kubever=$(kubectl version | base64 | tr -d '\n')
 # kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
 
 
