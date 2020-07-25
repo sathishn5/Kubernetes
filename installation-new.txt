@@ -63,7 +63,7 @@ run this below command in only node1.coz we are going to make node1 as kube mast
 # sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 # sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-https://www.weave.works/docs/net/latest/kubernetes/kube-addon/ (kube proxy addons installation)
+https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#configuration-options (kube proxy addons installation)
 
 
 # kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
