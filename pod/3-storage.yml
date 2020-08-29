@@ -23,3 +23,36 @@ spec:
     hostPath:
       path: /var/lib/postgres
       type: DirectoryOrCreate
+      
+      
+      
+      
+      
+      below is for httpd
+      
+      ---
+#single pod with single container attached with host storage
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database
+  namespace: twitter
+  labels:
+    app: httpd
+    tier: backend
+    version: master
+spec:
+  containers:
+  - name: httpd
+    image: httpd
+    ports:
+      - containerPort: 80
+    volumeMounts:
+      - name: httpdata
+        mountPath: /usr/local/apache2/htdocs/
+  volumes:
+  - name: httpdata
+    hostPath:
+      path: /var/lib/httpd/
+      type: DirectoryOrCreate
+
